@@ -3,6 +3,9 @@ import profile1 from '../../images/profile1.jpg';
 import profile2 from '../../images/profile2.jpg';
 import SectionTitle from '../common/SectionTitle';
 import GithubCard from '../common/GithubCard';
+import ProfileCard from './ProfileCard';
+import ContactItem from './ContactItem';
+import AboutContent from './AboutContent';
 
 function About() {
   const contactInfo = {
@@ -12,87 +15,73 @@ function About() {
     github: 'https://github.com/jojinhyeong'
   };
 
+  const aboutParagraphs = [
+    '3년차 웹 개발자로서 jQuery와 Spring Boot를 활용한 풀스택 개발 경험이 있으며, AWS를 이용한 인프라 구축 경험이 있습니다.',
+    '최근에는 더 나은 사용자 경험을 제공하기 위해 React와 같은 모던 프론트엔드 기술을 학습하며 역량을 확장하고 있습니다.',
+    '새로운 기술과 트렌드를 학습하는 것을 즐기며, 지속적인 성장을 위해 노력하고 있습니다.',
+    '팀 프로젝트에서는 원활한 의사소통과 협업을 통해 프로젝트의 성공적인 완수를 이끌어낸 경험이 있습니다.'
+  ];
+
+  const experience = {
+    company: 'Seobu Feed Co., Ltd.',
+    period: 'Apr 2021 - Nov 2024',
+    description: '웹 개발자 & ERP 시스템 관리자',
+    details: 'jQuery와 Spring Boot를 활용한 웹 애플리케이션 개발 및 ERP 시스템 관리. 사내 업무 시스템 유지보수 및 개선 작업 담당.'
+  };
+
+  const profileImages = {
+    front: profile1,
+    back: profile2
+  };
+
   return (
-    <section id="about" className="relative py-20 bg-white">
+    <section id="about" className="relative py-20 bg-white font-['Neue_Montreal']">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <SectionTitle title="About Me" />
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mt-16">
+          {/* 왼쪽: 자기소개 & GitHub & Experience */}
           <div className="space-y-8 animate-fadeIn opacity-0 [animation-fill-mode:forwards] [animation-delay:400ms]">
-            <div className="space-y-6">
-              <p className="text-gray-600 leading-relaxed text-lg">
-                3년차 백엔드 개발자로서 Spring Boot와 Java를 활용한 서버 개발, 
-                AWS를 이용한 인프라 구축 경험이 있습니다.
-              </p>
-              <p className="text-gray-600 leading-relaxed text-lg">
-                최근에는 프론트엔드 기술에도 관심을 가지고 React를 학습하며, 
-                풀스택 개발자로 성장하기 위해 노력하고 있습니다.
-              </p>
-              <p className="text-gray-600 leading-relaxed text-lg">
-                새로운 기술을 배우는 것을 좋아하며, 문제 해결 능력을 향상시키기 위해
-                지속적으로 학습하고 있습니다.
-              </p>
-              <p className="text-gray-600 leading-relaxed text-lg">
-                팀 프로젝트에서는 원활한 의사소통과 협업을 통해 
-                프로젝트의 성공적인 완수를 이끌어낸 경험이 있습니다.
-              </p>
-            </div>
-            
+            <AboutContent paragraphs={aboutParagraphs} />
             <GithubCard url={contactInfo.github} />
-          </div>
-
-          <div className="flex flex-col h-full animate-fadeIn opacity-0 [animation-fill-mode:forwards] [animation-delay:600ms]">
-            <div className="relative group h-[300px] md:h-[400px] [perspective:1000px]">
-              <div className="relative h-full w-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                {/* 앞면 (정장 사진) */}
-                <div className="absolute inset-0">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 
-                    rounded-lg blur-lg"></div>
-                  <img
-                    src={profile1}
-                    alt="Profile"
-                    className="absolute inset-0 rounded-lg shadow-xl w-full h-full object-contain
-                      [backface-visibility:hidden]"
-                  />
-                </div>
-
-                {/* 뒷면 (캐주얼 사진) */}
-                <div className="absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden]">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 
-                    rounded-lg blur-lg"></div>
-                  <img
-                    src={profile2}
-                    alt="Profile 2"
-                    className="absolute inset-0 rounded-lg shadow-xl w-full h-full object-contain"
-                  />
-                </div>
+            
+            {/* Experience Section */}
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Work Experience</h3>
+              <div className="space-y-2">
+                <p className="text-lg font-medium">{experience.company}</p>
+                <p className="text-gray-600">{experience.period}</p>
+                <p className="text-blue-600 font-medium">{experience.description}</p>
+                <p className="text-gray-600 leading-relaxed">{experience.details}</p>
               </div>
             </div>
+          </div>
 
+          {/* 오른쪽: 프로필 사진 & 연락처 */}
+          <div className="flex flex-col h-full animate-fadeIn opacity-0 [animation-fill-mode:forwards] [animation-delay:600ms]">
+            <ProfileCard images={profileImages} />
+            
             <div className="bg-gray-50 rounded-lg p-6 mt-8 flex-grow">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Contact Info</h3>
               
               <div className="space-y-3">
-                <p className="flex items-center text-gray-600">
-                  <span className="text-blue-500 mr-3">📧</span>
-                  <a href={`mailto:${contactInfo.email}`} 
-                    className="hover:text-blue-500 transition-colors">
-                    {contactInfo.email}
-                  </a>
-                </p>
+                <ContactItem 
+                  icon="📧"
+                  href={`mailto:${contactInfo.email}`}
+                  text={contactInfo.email}
+                />
                 
-                <p className="flex items-center text-gray-600">
-                  <span className="text-blue-500 mr-3">📱</span>
-                  <a href={`tel:${contactInfo.phone}`} 
-                    className="hover:text-blue-500 transition-colors">
-                    {contactInfo.phone}
-                  </a>
-                </p>
+                <ContactItem 
+                  icon="📱"
+                  href={`tel:${contactInfo.phone}`}
+                  text={contactInfo.phone}
+                />
                 
-                <p className="flex items-center text-gray-600">
-                  <span className="text-blue-500 mr-3">📍</span>
-                  {contactInfo.location}
-                </p>
+                <ContactItem 
+                  icon="📍"
+                  text={contactInfo.location}
+                  isLink={false}
+                />
               </div>
             </div>
           </div>
