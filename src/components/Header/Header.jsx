@@ -29,7 +29,7 @@ function Header() {
 
           {/* 소개 */}
           <p className="text-lg md:text-xl font-light max-w-3xl pt-8 leading-relaxed">
-            Spring Boot와 Java를 기반으로 새로운 프로그램을 개발해왔습니다.
+            Spring Boot와 Java를 기반으로 다양한 프로그램을 개발해왔습니다.
             <br className="hidden md:block" />
             항상 새로운 기술에 대한 관심과 깊이 있는 학습을 즐깁니다.
           </p>

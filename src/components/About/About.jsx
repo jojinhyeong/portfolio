@@ -2,7 +2,7 @@ import React from 'react';
 import profile1 from '../../images/profile1.jpg';
 import profile2 from '../../images/profile2.jpg';
 import SectionTitle from '../common/SectionTitle';
-import GithubCard from '../common/GithubCard';
+import GithubCard from './GithubCard';
 import ProfileCard from './ProfileCard';
 import ContactItem from './ContactItem';
 import AboutContent from './AboutContent';
@@ -23,12 +23,12 @@ function About() {
   ];
 
   const experience = {
-    company: 'Seobu Feed Co., Ltd.',
-    period: 'Apr 2021 - Nov 2024',
+    company: '서부사료(주)',
+    period: '2021/04 ~ 2024/10',
     description: '웹 개발자 & ERP 시스템 관리자',
-    details: 'jQuery와 Spring Boot를 활용한 웹 애플리케이션 개발 및 ERP 시스템 관리. 사내 업무 시스템 유지보수 및 개선 작업 담당.'
+    details1: '1. 웹 프로그램 기획 및 개발.',
+    details2: '2. 사내 ERP 업무 시스템 유지보수 및 새로운 메뉴 개발.'
   };
-
   const profileImages = {
     front: profile1,
     back: profile2
@@ -52,7 +52,8 @@ function About() {
                 <p className="text-lg font-medium">{experience.company}</p>
                 <p className="text-gray-600">{experience.period}</p>
                 <p className="text-blue-600 font-medium">{experience.description}</p>
-                <p className="text-gray-600 leading-relaxed">{experience.details}</p>
+                <p className="text-gray-600 leading-relaxed">{experience.details1}</p>
+                <p className="text-gray-600 leading-relaxed">{experience.details2}</p>
               </div>
             </div>
           </div>
