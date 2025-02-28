@@ -1,11 +1,12 @@
 export const techStackData = {
     Backend: [
         { name: 'Spring Boot', icon: 'https://cdn.worldvectorlogo.com/logos/spring-3.svg' },
+        { name: 'Spring Security', icon: 'https://cdn.worldvectorlogo.com/logos/spring-3.svg' },
         { name: 'Java', icon: 'https://cdn.worldvectorlogo.com/logos/java-4.svg' },
-        { name: 'Node.js', icon: 'https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg' },
+        //{ name: 'Node.js', icon: 'https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg' },
         { name: 'JPA', icon: 'https://hibernate.org/images/hibernate_icon_whitebkg.svg' },
         { name: 'MyBatis', icon: 'https://mybatis.org/images/mybatis-logo.png' },
-        { name: 'Gradle', icon: 'https://cdn.worldvectorlogo.com/logos/gradle-1.svg' }
+        { name: 'Gradle', icon: 'https://cdn.worldvectorlogo.com/logos/gradle-1.svg' },
       ],
       Frontend: [
         { name: 'HTML', icon: 'https://cdn.worldvectorlogo.com/logos/html-1.svg' },

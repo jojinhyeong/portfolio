@@ -12,7 +12,9 @@ function ProjectCard({ project }) {
           transition-colors duration-300">
           {project.title}
         </h3>
-        
+        <p className="text-base font-semibold text-gray-600 mb-2">
+          {project.period}
+        </p>
         <p className="text-gray-600 mb-6 line-clamp-3">
           {project.description}
         </p>

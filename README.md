@@ -22,7 +22,7 @@ https://portfolio-seven-eta-34.vercel.app/
 - Tailwind CSS
 - Vercel (배포)
 
-## 주요 기능
+## 기타 기능
 - 다양한 디바이스에서 최적화된 뷰 제공
 - 주요 프로젝트 소개 및 상세 정보 제공
 - 이력서 사진 클릭시 이미지 교체
